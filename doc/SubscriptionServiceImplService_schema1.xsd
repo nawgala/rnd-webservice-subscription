@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://subscription.ws.sdp.hsenidmobile/" xmlns:tns="http://subscription.ws.sdp.hsenidmobile/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="RequestHeaderElement" nillable="true" type="tns:requestHeader"/>
+
+  <xs:element name="SendEligibilityRequest" type="tns:SendEligibilityRequest"/>
+
+  <xs:element name="SendEligibilityRequestResponse" type="tns:SendEligibilityRequestResponse"/>
+
+  <xs:element name="SendSubscriptionRequest" type="tns:SendSubscriptionRequest"/>
+
+  <xs:element name="SendSubscriptionRequestResponse" type="tns:SendSubscriptionRequestResponse"/>
+
+  <xs:complexType name="SendSubscriptionRequest">
+    <xs:sequence>
+      <xs:element name="SubscriptionRequestElement" type="tns:subscriptionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subscriptionRequest">
+    <xs:sequence>
+      <xs:element name="MSISDN" type="xs:string"/>
+      <xs:element name="SiteId" type="xs:string"/>
+      <xs:element name="PackNam" type="xs:string"/>
+      <xs:element name="EffectiveDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="ExtTrxId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestHeader">
+    <xs:sequence>
+      <xs:element name="Auth" type="tns:auth"/>
+      <xs:element name="Application" type="tns:application"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="auth">
+    <xs:sequence>
+      <xs:element name="Password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="application">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SendSubscriptionRequestResponse">
+    <xs:sequence>
+      <xs:element name="SubscriberPackResponseElement" type="tns:subscriptionResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subscriptionResponse">
+    <xs:sequence>
+      <xs:element name="StatusCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="StatusDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="Ext_Trx_ID" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransactionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SendEligibilityRequest">
+    <xs:sequence>
+      <xs:element name="EligibilityRequestElement" type="tns:eligibilityRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eligibilityRequest">
+    <xs:sequence>
+      <xs:element name="MSISDN" type="xs:string"/>
+      <xs:element name="SiteId" type="xs:string"/>
+      <xs:element name="PackNam" type="xs:string"/>
+      <xs:element name="ExtTrxId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SendEligibilityRequestResponse">
+    <xs:sequence>
+      <xs:element name="SubscriberEligibilityResponseElement" type="tns:eligibilityResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eligibilityResponse">
+    <xs:sequence>
+      <xs:element name="StatusCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="StatusDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="Ext_Trx_ID" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransactionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
