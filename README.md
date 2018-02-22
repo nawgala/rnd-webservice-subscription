@@ -12,8 +12,7 @@
 
 ### How to generate xsd and wsdl
     Build the project and execute following
-    wsgen -verbose -keep -cp /path/to/subscription-x.x.jar hsenidmobile.sdp.ws.subscription.SubscriptionService  -wsdl
-    
+    wsgen -verbose -keep -cp  /home/sampath/project/rnd/webservice/rnd-webservice-subscription/target/subscription-1.0.0-SNAPSHOT.jar hsenidmobile.sdp.ws.subscription.SubscriptionServiceImpl -wsdl
     
 ### References
     http://www.mkyong.com/webservices/jax-ws/jax-ws-wsgen-tool-example/?utm_source=mkyong&utm_medium=author&utm_campaign=related-post&utm_content=3

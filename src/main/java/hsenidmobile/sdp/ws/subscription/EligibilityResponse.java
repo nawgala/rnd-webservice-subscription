@@ -23,6 +23,17 @@ public class EligibilityResponse {
     @XmlElement(name = "TransactionId")
     private String transactionId;
 
+    @XmlElement(name = "EligibilityStatus")
+    private String eligibilityStatus;
+
+    public String getEligibilityStatus() {
+        return eligibilityStatus;
+    }
+
+    public void setEligibilityStatus(String eligibilityStatus) {
+        this.eligibilityStatus = eligibilityStatus;
+    }
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
