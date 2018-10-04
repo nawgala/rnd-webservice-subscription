@@ -2,13 +2,13 @@
 
 ### Environment 
 
-+ Maven 2.2.1
++ Maven 2.2.x
 + java 1.6 
 
 
 ### How to build 
 
-    mvn clean install
+    mvn clean install -Dmaven.test.skip=true
 
 ### How to generate xsd and wsdl
     Build the project and execute following
